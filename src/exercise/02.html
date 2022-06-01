@@ -14,7 +14,10 @@
 
     const element = React.createElement('div', {
       className: 'container',
-      children: ['Hello ', 'World'].map((text, idx) => createSpan(text, { key: idx }))
+      children: ['Hello', 'Wold'].map((text, idx, arr) => {
+        if (idx + 1 < arr.length) text = `${text} `
+        return createSpan(text, { key: idx })
+      })
     })
 
     ReactDOM.createRoot(rootElement).render(element)
