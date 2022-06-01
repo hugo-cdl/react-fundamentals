@@ -10,11 +10,11 @@
   <script type="module">
     const rootElement = document.getElementById('root')
 
-    const createSpan = (text) => React.createElement('span', null, text)
+    const createSpan = (text, props) => React.createElement('span', { ...props }, text)
 
     const element = React.createElement('div', {
       className: 'container',
-      children: ['Hello ', 'World'].map(text => createSpan(text))
+      children: ['Hello ', 'World'].map((text, idx) => createSpan(text, { key: idx }))
     })
 
     ReactDOM.createRoot(rootElement).render(element)
