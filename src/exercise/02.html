@@ -14,7 +14,7 @@
 
     const element = React.createElement('div', {
       className: 'container',
-      children: ['Hello', 'Wold'].map((text, idx, arr) => {
+      children: ['Hello', 'World'].map((text, idx, arr) => {
         if (idx + 1 < arr.length) text = `${text} `
         return createSpan(text, { key: idx })
       })
